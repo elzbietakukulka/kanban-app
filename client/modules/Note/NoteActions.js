@@ -52,3 +52,19 @@ export function createNoteRequest(note, laneId) {
     });
   };
 }
+
+export function updateNoteRequest(note) {
+  return (dispatch) => {
+    return callApi('notes','put', {id: note.id, task: note.task} ).then(noteResp => {
+      dispatch(updateNote(noteResp));
+    });
+  }
+}
+
+export function deleteNoteRequest(noteId, laneId) {
+  return (dispatch => {
+    return callApi(`notes/${noteId}`, 'delete').then(() => {
+      dispatch(deleteNote(noteId, laneId));
+    });
+  })
+}

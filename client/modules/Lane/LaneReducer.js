@@ -41,5 +41,3 @@ export default function lanes(state = initialState, action) {
  }
 }
 
-
-export default LaneReducer;

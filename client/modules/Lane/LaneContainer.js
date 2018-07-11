@@ -5,6 +5,7 @@ import { createNote } from '../Note/NoteActions';
 import { deleteLane, updateLane, editLane } from './LaneActions';
 import { createNoteRequest } from '../Note/NoteActions';
 
+
 const mapStateToProps = (state, ownProps) => ({
   laneNotes: ownProps.lane.notes.map(noteId => state.notes[noteId])
 });
